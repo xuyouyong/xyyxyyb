@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" id="color" href="css.css" />
+    <script src="huanfu.js"></script>
+</head>
+<body>
+<button id="red">背景红色</button>
+<button id="blue">背景蓝色</button>
+<script>
+    window.onload=function () {
+        var str=document.cookie
+        // console.log(str);
+        str=str.substring("color=".length)
+        //console.log(str)
+        var color=document.getElementById("color")
+        color.href=str
+    }
+    var red=document.getElementById("red")
+    var blue=document.getElementById("blue")
+
+    red.onclick=function () {
+        color.href="fu-red.css"
+        var date=new Date();
+        date.setDate(date.getDate()+1)
+        document.cookie ="color=red.css;expires="+date.toGMTString();
+    }
+    blue.onclick=function () {
+        color.href="blue.css"
+        var date=new Date();
+        date.setDate(date.getDate()+1)
+        document.cookie ="color=blue.css;expires="+date.toGMTString();
+    }
+
+
+</script>
+</body>
+</html>
